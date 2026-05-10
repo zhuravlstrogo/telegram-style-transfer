@@ -1,0 +1,33 @@
+2026-05-10 13:31:50  INFO     [evaluate]  log → /Users/anyarulina/telegram-style-transfer/logs/evaluate_20260510_133150.log
+2026-05-10 13:31:50  INFO     [evaluate]  eval limit=100  source=/Users/anyarulina/telegram-style-transfer/configs/data.yaml
+2026-05-10 13:31:50  INFO     [evaluate]  --- [1/5] LENGTH COMPARISON ---
+2026-05-10 13:31:50  INFO     [evaluate]  Length report:
+
+=== type1 (n=100) ===
+  Input: chars mean=265  median=230  std=159  [0, 764]
+  Reference: chars mean=254  median=220  std=161  [44, 935]
+  Ref/Input char ratio: mean=4.79  median=0.93
+  Generated: chars mean=nan  median=nan  std=nan  [nan, nan]
+  Gen/Input char ratio: mean=nan  median=nan
+  Gen/Ref char ratio: mean=nan  median=nan
+
+=== type2 (n=100) ===
+  Input: chars mean=226  median=201  std=114  [64, 537]
+  Reference: chars mean=213  median=186  std=114  [50, 564]
+  Ref/Input char ratio: mean=0.93  median=0.93
+  Generated: chars mean=212  median=208  std=111  [56.0, 555.0]
+  Gen/Input char ratio: mean=0.93  median=0.91
+  Gen/Ref char ratio: mean=1.01  median=0.99
+2026-05-10 13:31:54  INFO     [evaluate]  --- [2/5] STYLE CLASSIFIER (TF-IDF + LogReg) ---
+2026-05-10 13:31:54  INFO     [evaluate]  type1 | Reference posts → accuracy=0.660  confidence=0.579
+2026-05-10 13:31:54  INFO     [evaluate]  type2 | Reference posts → accuracy=0.970  confidence=0.814
+2026-05-10 13:31:54  INFO     [evaluate]  type2 | Generated texts → accuracy=0.970  confidence=0.820
+2026-05-10 13:31:54  INFO     [evaluate]  --- [3/5] CROSS-TYPE CONFUSION MATRIX ---
+2026-05-10 13:31:54  WARNING  [evaluate]  Need --generated-type1 and --generated-type2. Skipping.
+2026-05-10 13:31:54  INFO     [evaluate]  --- [4/5] COSINE SIMILARITY (input vs generated) — model: sentence-transformers/LaBSE ---
+2026-05-10 13:32:12  WARNING  [evaluate]  type1: no generated outputs, skipping.
+2026-05-10 13:32:20  INFO     [evaluate]  type2 | cosine mean=0.8685  median=0.8804  std=0.0679  [0.5912, 0.9681]
+2026-05-10 13:32:20  INFO     [evaluate]  --- [5/5] MAUVE (generated vs reference corpus) — model: xlm-roberta-base ---
+2026-05-10 13:32:20  WARNING  [evaluate]  type1: no generated outputs, skipping.
+2026-05-10 13:32:40  INFO     [evaluate]  type2 | MAUVE=0.9989  frontier_integral=0.0056
+2026-05-10 13:32:40  INFO     [evaluate]  Summary → reports/eval/style2/finetuned_test_synth_100/eval_summary.json

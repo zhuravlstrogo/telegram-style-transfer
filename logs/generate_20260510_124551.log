@@ -1,0 +1,2 @@
+2026-05-10 12:45:51  INFO     [generate]  log → /Users/anyarulina/telegram-style-transfer/logs/generate_20260510_124551.log
+2026-05-10 12:45:51  INFO     [generate]  style_type=type1  inputs=10  adapter=models/type1/synthetic_openrouter/adapter  device=cpu

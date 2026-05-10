@@ -1,0 +1,20 @@
+2026-05-10 10:45:59  INFO     [evaluate]  log → /Users/anyarulina/telegram-style-transfer/logs/evaluate_20260510_104559.log
+2026-05-10 10:45:59  INFO     [evaluate]  eval limit=100  source=cli
+2026-05-10 10:45:59  INFO     [evaluate]  --- [1/5] LENGTH COMPARISON ---
+2026-05-10 10:45:59  INFO     [evaluate]  Length report:
+
+=== all (n=100) ===
+  Input: chars mean=265  median=230  std=159  [0, 764]
+  Reference: chars mean=254  median=220  std=161  [44, 935]
+  Ref/Input char ratio: mean=4.79  median=0.93
+  Generated: chars mean=750  median=768  std=326  [12, 1315]
+  Gen/Input char ratio: mean=7.50  median=3.17
+  Gen/Ref char ratio: mean=4.56  median=3.32
+2026-05-10 10:46:03  INFO     [evaluate]  --- [2/5] STYLE CLASSIFIER (TF-IDF + LogReg) ---
+2026-05-10 10:46:03  INFO     [evaluate]  type1 | Reference posts → accuracy=0.660  confidence=0.579
+2026-05-10 10:46:03  INFO     [evaluate]  type1 | Generated texts → accuracy=0.840  confidence=0.581
+2026-05-10 10:46:03  INFO     [evaluate]  --- [4/5] COSINE SIMILARITY (input vs generated) — model: sentence-transformers/LaBSE ---
+2026-05-10 10:46:40  INFO     [evaluate]  type1 | cosine mean=0.5841  median=0.6153  std=0.2049  [0.0612, 0.9383]
+2026-05-10 10:46:40  INFO     [evaluate]  --- [5/5] MAUVE (generated vs reference corpus) — model: xlm-roberta-base ---
+2026-05-10 10:47:12  INFO     [evaluate]  type1 | MAUVE=0.0220  frontier_integral=0.7274
+2026-05-10 10:47:12  INFO     [evaluate]  Summary → reports/eval/baseline_test_type1_100/eval_summary.json

@@ -1,0 +1,92 @@
+Metadata-Version: 2.4
+Name: telegram-style-transfer
+Version: 0.1.0
+Summary: Fine-tuning pipeline for style-transfer-like Telegram post generation
+Author: Project Authors
+License: MIT License
+        
+        Copyright (c) 2026 Alsu Iarulina
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: black>=24.3.0; extra == "dev"
+Requires-Dist: isort>=5.13.2; extra == "dev"
+Requires-Dist: pylint>=3.2.6; extra == "dev"
+Requires-Dist: pre-commit>=3.8.0; extra == "dev"
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+Dynamic: license-file
+
+# telegram-style-transfer
+
+Минимальная структура Python-проекта для fine-tune LLM под стиль постов.
+
+## Структура
+
+```text
+.
+├── config/
+│   └── train.yaml
+├── configs/
+│   ├── data.yaml
+│   └── env.yaml
+├── data/
+│   ├── interim/
+│   ├── processed/
+│   └── raw/
+├── models/
+├── scripts/
+│   ├── finetune.py
+│   └── prepare_dataset.py
+├── src/
+│   └── telegram_style_transfer/
+│       ├── __init__.py
+│       └── paths.py
+├── tests/
+│   └── test_imports.py
+├── pyproject.toml
+├── task_description.md
+└── LICENSE
+```
+
+## Быстрый старт
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+pip install -e ".[dev]"
+pytest
+```
+
+## Качество кода
+
+```bash
+make format
+make check
+pre-commit install
+pre-commit run --all-files
+```
+                                
+  - если для обучения хватит 10K примеров, то ограничься этим числом, выбери рандомно (наверное приоритет у  
+  новых постов, потому что стиль может поменяться)                                                           
+  - добавь python предобработку    

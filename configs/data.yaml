@@ -1,0 +1,25 @@
+# Dataset sizing. Used by:
+#   - scripts/prepare_dataset.py                (per-type --max-samples)
+#   - scripts/generate_openrouter_synthetic.py  (per-split --target-ok)
+#   - scripts/generate*.py / scripts/evaluate.py (optional fast eval subset)
+#
+# Logic: we want target_train_ok train records per type AFTER the LLM
+# neutralization filter drops failed records. Observed drop rates differ
+# strongly between channels, so max_samples is sized per-type:
+#
+#     train_count       = max_samples * 0.8
+#     ok_train_estimate = train_count * (1 - estimated_drop_rate)
+#
+# Tune if you observe different drop rates in synthetic_openrouter/report.json.
+
+target_train_ok: 1600
+target_eval_samples: 100
+
+max_samples:
+  type1: 2000   # banki_oil  ≈ 0% drop  → 1600 train × 1.00 ≈ 1600 ok
+  type2: 3300   # moscowach  ≈ 38% drop → 2640 train × 0.62 ≈ 1637 ok
+
+# Reference only — not consumed by code; documents the assumption above.
+estimated_drop_rate:
+  type1: 0.00
+  type2: 0.38
