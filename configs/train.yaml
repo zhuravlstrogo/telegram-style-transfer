@@ -1,6 +1,5 @@
 # Fine-tuning hyperparameters used by scripts/finetune.py.
 # This is the canonical training config under configs/.
-# The legacy copy at config/train.yaml is kept for backward compatibility.
 
 base_model: "Qwen/Qwen2.5-3B-Instruct"
 load_in_4bit: true

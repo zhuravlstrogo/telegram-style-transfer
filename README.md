@@ -23,9 +23,6 @@ Fine-tune LLM под стиль постов telegram-каналов.
 ├── reports/            # отчёты и метрики (скачать по ссылке)
 ├── docs/               # research
 ├── logs/               # логи запусков
-├── task_description.md
-├── pipeline.md
-├── inference.md
 ├── RESULTS.md
 ├── pyproject.toml
 ├── requirements.txt
@@ -35,6 +32,6 @@ Fine-tune LLM под стиль постов telegram-каналов.
 ## Скачивание данных и артефактов
 
 - `data/` - [data](https://drive.google.com/file/d/18a2-BA4LNxqwGrFoztAs5B4Cz0VsmGp_)
-- `models/` - [models](https://drive.google.com/file/d/1rWWAXY4Xp8zDUUuWG5_GnODvcR31hK3N)
+- `models/` - [models](https://drive.google.com/file/d/1ks1Feb2Nb2kowVD12UGg0DCQo9nqL5sR)
 - `output/` - [output](https://drive.google.com/file/d/1J5HHmH-rrp_Aq_sAJ1B2A5yJlpPJawGK)
 - `reports/` - [reports](https://drive.google.com/file/d/1sdU0BnYJDq-uN8OsILWLp0GGY7xmzW9b)
