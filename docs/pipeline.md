@@ -25,22 +25,30 @@
 
 ## Шаг 0. Окружение
 
-Локально:
+Основной сценарий для пайплайна обучения - `GPU`. Ниже команды для `conda`-окружения с Python 3.11.
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
+conda create -n telegram-style-transfer python=3.11 -y
+conda activate telegram-style-transfer
+# пример для Ubuntu + CUDA 12.1
+conda install -y -c pytorch -c nvidia pytorch==2.5.1 pytorch-cuda=12.1
+pip install -r requirements.txt
 pip install -e .
 pip install -e ".[dev]"
+pip install "unsloth[cu121-torch230] @ git+https://github.com/unslothai/unsloth.git"
 ```
 
-Для опционального synthetic-шага через OpenRouter — ключ:
+Запускать fine-tune потом с `--env ubuntu_t4`.
+
+`torch` намеренно не включён в `requirements.txt`; конкретная команда и версия PyTorch зависят от платформы, драйвера и версии CUDA. Пример выше подходит для `Ubuntu + CUDA 12.1`, а для других окружений ориентируйся на [docs/inference.md](/Users/anyarulina/telegram-style-transfer/docs/inference.md:70).
+
+Для шага LLM нейтрализации через API OpenRouter добавь API ключ:
 
 ```bash
 echo 'OPENROUTER_API_KEY=...' >> .env
 ```
 
-Для fine-tune на Ubuntu + T4 (Triton требует системные C-headers):
+Для Ubuntu при установке `unsloth` может понадобиться системный toolchain:
 
 ```bash
 sudo apt update
