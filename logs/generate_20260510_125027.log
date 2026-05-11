@@ -1,4 +1,0 @@
-2026-05-10 12:50:27  INFO     [generate]  log → /Users/anyarulina/telegram-style-transfer/logs/generate_20260510_125027.log
-2026-05-10 12:50:27  WARNING  [generate]  adapter bundle is incomplete at models/type1/synthetic_openrouter/adapter; falling back to checkpoint models/type1/synthetic_openrouter/checkpoints/checkpoint-300
-2026-05-10 12:50:27  INFO     [generate]  input limit=1  source=cli
-2026-05-10 12:50:27  INFO     [generate]  style_type=type1  inputs=1  adapter=models/type1/synthetic_openrouter/adapter  adapter_source=models/type1/synthetic_openrouter/checkpoints/checkpoint-300  device=cpu
